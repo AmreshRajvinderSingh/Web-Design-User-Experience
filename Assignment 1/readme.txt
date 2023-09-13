@@ -1,3 +1,7 @@
+This is a Wesbite called  Online Guru: Your Digital Learning Platform, where i have used HTML and CSS.
+I have mentioned all the tags which i have used to create this website.
+This webiste has 5 web pages Home, Register for a course, Contact, Career Site, About.  
+
 <!DOCTYPE html> - This tag is used for declaring or for defining the document to be HTML5.
 
 <html> - The root element of an HTML document <html> tag is the container for all other HTML elements.
