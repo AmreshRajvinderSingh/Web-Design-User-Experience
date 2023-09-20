@@ -1,0 +1,363 @@
+@media (max-width: 768px) {
+    .column {
+        width: 100%;
+        margin: 10px 0;
+        float: none;
+    }
+}
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    header {
+        padding: 10px;
+    }
+    .profile {
+        padding: 10px;
+    }
+}
+
+    nav ul li {
+        margin-right: 10px;
+    }
+@media (max-width: 480px) {
+        header {
+            padding: 10px;
+        }
+        .profile {
+            padding: 10px;
+            display:flow;
+        }
+        .gallery{
+            display:flow;
+            width: 20%
+        }
+        
+
+        
+    }
+        
+
+body{
+    width: 80%;
+    margin-left: 7%;
+    margin-right: 7%;
+    background-color: #1f242d;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+
+}
+header.menubar {
+    width: 90%;
+    top: 0%;
+    right: 0%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+nav ul{
+    list-style-type: none;
+}
+nav a {
+    text-decoration: none;
+    padding-right: 100px;
+    color: aliceblue;
+}
+nav li {
+    display: inline;
+    font-size: 20px;
+   
+    
+    
+}
+.intro p{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+}
+
+.profile img{
+    position: left;
+    width: 250px;
+    height: 250px;
+    padding-left: 10%;
+    padding-top:  15%; 
+   
+    border-radius: 50%;
+}
+.intro{
+    padding-top: 0%;
+    width: 50%;
+    padding-left: 10%;
+
+    
+}
+
+section{
+    display: flex;
+    align-items:flex-start;
+    width: 100%;
+    
+}
+a:hover{
+    text-decoration: none;
+    color: #658cda;
+    font-size: 25px;
+    
+}
+figcaption{
+    width: 250px;
+    height: ;
+}
+.profile h2{
+    padding-left: -20%;
+    padding-top: 30%;
+    
+    color: aliceblue;
+    
+  
+}
+
+.profile p{
+    
+    color: aliceblue;
+    width: 100%;
+    
+    
+    
+}
+.skills h2{
+    color: aliceblue;
+    padding-left: 10px;
+}
+.skills img{
+  margin-left: 20px;
+  margin-top: 35px;
+  height: 80px;
+  border-radius: 4px;
+  padding: px;
+  width: 90px;
+  
+}
+.ho:hover{
+    transform: scale(2);
+    animation-delay: 2s;
+    
+}
+.tcs img{
+  margin-left: 20px;
+  margin-top: 20px;
+  height: 110px;
+  border-radius: 4px;
+  padding: px;
+  width: 150px;
+  float: right;
+  padding-right: 50px;
+}
+.skills{
+    background-color: #323946;
+}
+.work{
+    background-color:#323946;
+}
+.work h2{
+    color: aliceblue;
+}
+.data h2, .data1 h2{
+    padding-left: 20px;
+}
+.data li, .data1 li{
+    font-size: 20px;
+    color: aliceblue;
+
+    
+}
+.edu h2{
+    padding-left: 20px;
+    color: aliceblue;
+}
+.edu{
+    background-color:#323946;
+}
+.work h2{
+    padding-left: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    color: aliceblue;
+  }
+tr:hover {background-color: rgb(65, 62, 61);}
+
+#container {
+     
+    margin-left: auto;
+    margin-right: auto;
+}
+.gallery {
+    
+    padding: 20px;
+    margin: 20px;
+    
+    text-align: center;
+    display:inline-flex
+}
+.gallery img {
+    width: 250px;
+    height: 250px;
+    padding-left: 20px;
+    
+}
+
+.gallery:hover {
+    border-radius: 25px;
+    
+    
+}
+.gallery h2{
+    text-align: left;
+    padding-left: 20px;
+    color: aliceblue;
+}
+.ho:hover{
+    transform: scale(2);
+    animation-delay: 2s;
+    
+}
+.foot{
+    background-color: #323946;
+    width: 100%;
+    position:absolute;
+    
+}
+.foot summary{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+font-size: 20px;
+color: aliceblue;
+}
+#videodiv{
+          
+    text-align: center;
+}
+.pos h2{
+    color: #ddd;
+}
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.submit-btn-container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.66em;          
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.submit-btn-container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 0.66em;          
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    float: left;;
+}
+section{
+    display: flex;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+label {
+    
+    color: aliceblue;
+}
+figcaption{
+    color:#fff;
+}
+form{
+    width: 40%;
+    height:40%;
+    align-items: center;
+    float: right;
+
+    
+}
