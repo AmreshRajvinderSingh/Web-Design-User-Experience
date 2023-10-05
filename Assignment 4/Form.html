@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Feedback</title>
+  <link rel="stylesheet" href="stle.css">
+  <style>
+    label {	float: left;
+			width: 150px;}
+      #container{
+          width: 700px;
+          margin: auto;
+          background-color: beige;
+      } 
+      main{
+          padding: 50px;
+      }
+  </style>
+ </head>
+ <body>
+ <div id="container">
+	 
+	 <main>
+	 <h2>Feeback</h2>
+	 <h3>Love something? Hate something? Let us know!</h3>
+		 Note : Fields marked with an asterisk(*) are mandatory
+		 <br><br>
+		 <form method="post" novalidate name="myform">
+			<label>Title*:</label>
+			<input type="radio" name="title" id="miss" value="Miss" required="required"/>Miss
+			<input type="radio" name="title" id="mr" value="Mr" required="required"/>Mr.
+			<input type="radio" name="title" id="mrs" value="Mrs" required="required"/>Mrs.
+			<br><br>
+			
+
+
+
+			<label for="firstName">First Name*:</label>
+			<input type="text" required="required" name="firstName" id="firstName" placeholder="First Name " />
+			<br><br>
+			<div id="error_fname" style="display:none; color:red">
+				Invalid First Name, Please enter only alphabets
+			</div>
+			
+
+			<label for="lastName">Last Name*:</label>
+			<input type="text" required="required" name="lastName" id="lastName" placeholder="Last Name" />
+			<br><br>
+			<div id="error_lname" style="display:none; color:red">
+				Invalid Last Name, Please enter only alphabets
+			</div>
+			
+
+			<label for="emailId">Email Id*:</label>
+			<input type="text" required="required" name="emailId" id="emailId" placeholder="yourname@domain.com" />
+			<br><br>
+			<div id="error_email" style="display:none; color:red">
+				Invalid Email, Please enter correct email
+			</div>
+			
+
+			<label for="phoneNumber">Phone Number*:</label>
+			<input type="text" required="required" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" />
+			<br><br>
+			<div id="error_phone" style="display:none; color:red">
+				Invalid Phone Number, Please enter correct 10 digit Phone Number 
+			</div>
+
+            <label for="streetAddress1">Street Address 1*:</label>
+            <input type="text" required="required" name="streetAddress1" id="streetAddress1" placeholder="Street Address 1" />
+            <br><br>
+            <div id="error_streetAddress1" style="display:none; color:red">
+                Invalid Street Address 1
+            </div>
+            
+            <label for="streetAddress2">Street Address 2:</label>
+            <input type="text" name="streetAddress2" id="streetAddress2" placeholder="Street Address 2" />
+            <br><br>
+            
+            <label for="city">City*:</label>
+            <input type="text" required="required" name="city" id="city" placeholder="City" />
+            <br><br>
+            <div id="error_city" style="display:none; color:red">
+                Invalid City
+            </div>
+            
+            <label for="state">State*:</label>
+            <input type="text" required="required" name="state" id="state" placeholder="State" />
+            <br><br>
+            <div id="error_state" style="display:none; color:red">
+                Invalid State
+            </div>
+            
+
+			
+            <label for="zipcode">ZipCode*:</label>
+			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" required="required" />
+                <div id="error_zip" style="display:none; color:red">
+				Invalid Zip Code, Please enter correct 5 digit ZipCode
+			</div>
+            <br><br>
+             
+            <label for="zipcode">How did you hear*:</label>
+			<input type='checkbox' id="face" name="source" value="LinkedIn" /> LinkedIn
+            <input type='checkbox' id="google" name="source" value="Indeed" /> Indeed
+            <input type='checkbox'  id="yelp" name="source" value="GlassDoor" /> GlassDoor 
+			<br><br> 
+
+			
+			<br><br>
+			<label for="selectOption" def>Select Socail Media:</label>
+            <select id="selectOption" name="selectOption">
+                <option value="" disabled selected>Please select an option</option>
+                <option value="Linkedin">Linkedin</option>
+                <option value="Indeed">Indeed</option>
+                <option value="Glassdoor">Glassdoor</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Connectme">COnnectme</option>
+            </select>
+            <br><br>
+
+            <div id="checkbox" style="display: none;">
+                <input type="checkbox" id="enableCheckboxUrl" name="enableCheckboxUrl"> URL
+                <input type="checkbox" id="enableCheckboxWork" name="enableCheckboxWork"> Work Location
+            </div>
+            <br>
+            
+            <div id="checkUrl" style="display: none;">
+                <label for="textFieldUrl">URL:</label>
+                <input type="text" id="textFieldUrl" name="textFieldUrl" required >
+            </div>
+            <br><br>
+            <div id="checkWork" style="display: none;">
+                <label for="textFieldWork">Work Location:</label>
+                <input type="text" id="textFieldWork" name="textFieldWork" required >
+            </div>
+            <br><br>
+
+
+			
+             
+			<label for="comments" required="required">Comments*:</label>
+			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
+			<br><br>
+			
+		
+			<input type="submit" value="Submit" name="submit">
+            <input type="reset" value="Reset" name="reset">
+			<br><br>
+		 </form>
+	 </main>
+ </div>
+
+ <script>
+
+	let fName = true;
+    let lName = true;
+    let email = true;
+    let phone = true;
+    let zip = true;
+    let comment = true;
+    let check = true;
+    let title = true;
+    let streetAddress1 = true;
+    let city = true;
+    let state = true;
+    let workLocation = true;
+    let url=true;
+
+
+	const form = document.myform;
+    const regExFName = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+	const regExEmail = /^[a-zA-Z0-9._-]+@northeastern\.edu$/;
+	const regExPhone = /^\d{3}-\d{3}-\d{4}$/;
+	const regExZip = /^\d{5}$/;
+	
+
+    const printValue = (e) => {
+        let {name, value} = e.target;
+        if(name === "firstName"){
+            if(!value.trim().match(regExFName)){
+                document.getElementById('error_fname').style.display= 'block';
+				fName=true;
+            } else {
+                document.getElementById('error_fname').style.display= 'none';
+				fName=false;
+            }
+        }
+		if(name ==='lastName'){
+			if(!value.trim().match(regExFName)){
+				document.getElementById('error_lname').style.display='block';
+				lName=true;
+			}else{
+				document.getElementById('error_lname').style.display='none';
+				lName=false;
+			}
+		}
+		if(name === 'emailId'){
+			if(!value.trim().match(regExEmail)){
+				document.getElementById('error_email').style.display='block';
+				email=true;
+			}else{
+				document.getElementById('error_email').style.display='none';
+				email=false;
+			}
+		}
+		if(name ==='phoneNumber'){
+			if(!value.trim().match(regExPhone)){
+				document.getElementById('error_phone').style.display='block';
+				phone=true;
+			}else{
+				document.getElementById('error_phone').style.display='none';
+				phone=false;
+			}
+		}
+		if(name ==='zipcode'){
+			if(!value.trim().match(regExZip)){
+				document.getElementById('error_zip').style.display='block';
+				zip=true;
+			}else{
+				document.getElementById('error_zip').style.display='none';
+				zip=false
+			}
+		}
+        if (name === 'streetAddress1') {
+            if (!value.trim()) {
+                document.getElementById('error_streetAddress1').style.display = 'block';
+                streetAddress1 = true;
+            } else {
+                document.getElementById('error_streetAddress1').style.display = 'none';
+                streetAddress1 = false;
+            }
+        }
+        if (name === 'city') {
+            if (!value.trim()) {
+                document.getElementById('error_city').style.display = 'block';
+                city = true;
+            } else {
+                document.getElementById('error_city').style.display = 'none';
+                city = false;
+            }
+        }
+        if (name === 'state') {
+            if (!value.trim()) {
+                document.getElementById('error_state').style.display = 'block';
+                state = true;
+            } else {
+                document.getElementById('error_state').style.display = 'none';
+                state = false;
+            }
+        }
+        if(name === "textFieldUrl"){
+            if(!value.trim()){
+                url=true;
+
+            }else{
+                url=false;
+            }
+        }
+
+        if(name === 'textFieldWork'){
+            console.log(value)
+            if(!value.trim()){
+                workLocation=true;
+            }else{
+                workLocation=false;
+            }
+        }
+        
+        
+
+		const titles = document.getElementsByName("title");
+    	let titleSelected = false;
+   			 for (let i = 0; i < titles.length; i++) {
+       			 if (titles[i].checked) {
+           			 titleSelected = true;
+           			 break;
+       			 }
+   			}
+    		if (!titleSelected) {
+       			 title=true;
+   			 } else {
+        		title=false;
+   			 }
+		const sources = document.getElementsByName("source");
+    		let sourceSelected = false;
+    		for (let i = 0; i < sources.length; i++) {
+       			 if (sources[i].checked) {
+          		  sourceSelected = true;
+           		 break;
+       			 }
+   			 }
+    		if (!sourceSelected) {
+      			  check=true;
+   				} else {
+      					check=false;
+   					 }	 
+
+		const comments = document.getElementById("comments").value.trim();
+			if (!comments) {
+				comment=true;
+				} else {
+					comment=false;
+					}
+        if (title || fName || lName || email || phone || zip || comment || check || streetAddress1 || city || state || url || workLocation ) {
+            document.myform.submit.setAttribute('disabled', 'true');
+            } else {
+                document.myform.submit.removeAttribute('disabled');
+             }
+                    
+};
+const selectOption = document.getElementById("selectOption");
+
+selectOption.addEventListener("change", function () {
+    
+    if (selectOption.value) {
+        document.getElementById("checkbox").style.display = "block";
+    } else {
+        document.getElementById("checkbox").style.display = "none";
+    }
+    
+   
+    document.getElementById("enableCheckboxUrl").checked = false;
+    document.getElementById("enableCheckboxWork").checked = false;
+    document.getElementById("checkUrl").style.display = "none";
+    document.getElementById("checkWork").style.display = "none";
+    document.getElementById("textFieldUrl").disabled = true;
+    document.getElementById("textFieldWork").disabled = true;
+    document.getElementById("textFieldUrl").value = "";
+    document.getElementById("textFieldWork").value = "";
+});
+
+const enableCheckboxUrl = document.getElementById("enableCheckboxUrl");
+const enableCheckboxWork = document.getElementById("enableCheckboxWork");
+const checkUrl = document.getElementById("checkUrl");
+const textFieldUrl = document.getElementById("textFieldUrl");
+const checkWork = document.getElementById("checkWork");
+const textFieldWork = document.getElementById("textFieldWork");
+
+enableCheckboxUrl.addEventListener("change", function () {
+    // Show/hide the text field for URL based on the checkbox state
+    if (enableCheckboxUrl.checked) {
+        checkUrl.style.display = "block";
+        textFieldUrl.disabled = false;
+        textFieldUrl.focus();
+    } else {
+        checkUrl.style.display = "none";
+        textFieldUrl.disabled = true;
+    }
+});
+
+enableCheckboxWork.addEventListener("change", function () {
+   
+    if (enableCheckboxWork.checked) {
+        checkWork.style.display = "block";
+        textFieldWork.disabled = false;
+        textFieldWork.focus();
+    } else {
+        checkWork.style.display = "none";
+        textFieldWork.disabled = true;
+    }
+});
+
+
+    
+
+
+function submitted(e) {
+    e.preventDefault(); 
+    const fullName = document.querySelector('input[name="title"]:checked').value + " " +document.getElementById('firstName').value + " " +document.getElementById('lastName').value;
+    const formData = {
+        Name:fullName,
+        EmailId: document.getElementById('emailId').value,
+        PhoneNumber: document.getElementById('phoneNumber').value,
+        StreetAddress1: document.getElementById('streetAddress1').value,
+        StreetAddress2: document.getElementById('streetAddress2').value,
+        City: document.getElementById('city').value,
+        State: document.getElementById('state').value,
+        ZipCode: document.getElementById('zipcode').value,
+        HowDidYouHear: [...document.querySelectorAll('input[name="source"]:checked')].map(checkbox => checkbox.value).join(', '),
+        SocialMedia: document.getElementById('selectOption').value,
+        Comments: document.getElementById('comments').value
+    };
+
+    const resultsDiv = document.getElementById('results');
+
+   
+    let table = resultsDiv.querySelector('.customTable');
+    if (!table) {
+        table = document.createElement('table');
+        table.className = 'customTable';
+
+        const thead = document.createElement('thead');
+        const trHead = document.createElement('tr');
+        for (let key in formData) {
+            const th = document.createElement('th');
+            th.textContent = key;
+            trHead.appendChild(th);
+        }
+        thead.appendChild(trHead);
+        table.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+        table.appendChild(tbody);
+        resultsDiv.appendChild(table);
+    }
+
+    const tbody = table.querySelector('tbody');
+    const trNewBody = document.createElement('tr');
+    for (let key in formData) {
+        const td = document.createElement('td');
+        td.textContent = formData[key];
+        trNewBody.appendChild(td);
+    }
+    tbody.appendChild(trNewBody);
+
+
+
+    resetForm();
+}
+function resetForm() {
+    
+    const elements = form.elements;
+    for (let i = 0; i < elements.length; i++) {
+        const fieldType = elements[i].type.toLowerCase();
+        switch (fieldType) {
+            case "text":
+            case "password":
+            case "textarea":
+            case "hidden":
+                elements[i].value = "";
+                break;
+            case "radio":
+            case "checkbox":
+                if (elements[i].checked) {
+                    elements[i].checked = false;
+                }
+                break;
+            case "select-one":
+            case "select-multi":
+                elements[i].selectedIndex = -1;
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+
+
+    form.addEventListener("input", printValue);
+	form.addEventListener('submit', submitted);
+    
+ </script>
+
+
+
+ <div id="results">
+	<h2 style="text-align: center;"> Feedback Submited</h2>
+ </div>
+
+
+ </body>
+</html>
+
+
+
+
+
