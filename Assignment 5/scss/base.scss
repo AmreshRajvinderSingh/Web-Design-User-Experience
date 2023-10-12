@@ -1,0 +1,16 @@
+:root {
+    --transition-speed: 0.3s;
+  }
+  
+  body {
+    background-color: $bg-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $font-family-default;
+  
+    h1,h2,p{
+      color: $text-color;
+    }
+  }
+  
