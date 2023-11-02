@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+        }
+        
+        .stopwatch-container {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        #stopwatch-label {
+            font-size: 2em;
+        }
+        
+        button {
+            font-size: 1em;
+            padding: 10px 20px;
+            margin: 10px;
+        }
+        
+        #start-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        
+        #stop-button, #reset-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+        }
+        
+        #stop-button:disabled, #reset-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        #date-picker {
+            font-size: 1em;
+            padding: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="stopwatch-container">
+        <label id="stopwatch-label">00:00:00</label>
+        <button id="start-button">Start</button>
+        <button id="stop-button" disabled>Stop</button>
+        <button id="reset-button" disabled>Reset</button>
+        <br><br>
+        <input type="date" id="date-picker" value="">
+    </div>
+    <script >
+        const stopwatchLabel = document.getElementById('stopwatch-label');
+        const datePicker = document.getElementById('date-picker');
+        const startButton = document.getElementById('start-button');
+        const stopButton = document.getElementById('stop-button');
+        const resetButton = document.getElementById('reset-button');
+
+        let timerInterval;
+        let timeInSeconds = 0;
+        let isRunning = false;
+
+        datePicker.valueAsDate = new Date();
+
+        function updateTimeDisplay() {
+            const hours = Math.floor(timeInSeconds / 3600);
+            const minutes = Math.floor((timeInSeconds % 3600) / 60);
+            const seconds = timeInSeconds % 60;
+            stopwatchLabel.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            if (!isRunning) {
+                isRunning = true;
+                startButton.disabled = true;
+                stopButton.disabled = false;
+                resetButton.disabled = false;
+
+                timerInterval = setInterval(() => {
+                    timeInSeconds++;
+                    updateTimeDisplay();
+                }, 1000);
+            }
+        }
+
+        function stopTimer() {
+            if (isRunning) {
+                isRunning = false;
+                startButton.disabled = false;
+                stopButton.disabled = true;
+                clearInterval(timerInterval);
+            }
+        }
+
+        function resetTimer() {
+            stopTimer();
+            timeInSeconds = 0;
+            updateTimeDisplay();
+            resetButton.disabled = true;
+        }
+
+        startButton.addEventListener('click', startTimer);
+        stopButton.addEventListener('click', stopTimer);
+        resetButton.addEventListener('click', resetTimer);
+
+    </script>
+</body>
+</html>

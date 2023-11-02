@@ -1,0 +1,52 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.stopwatch-container {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#custom-display {
+    font-size: 2em;
+}
+
+.button-container {
+    margin: 20px;
+}
+
+button {
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+#custom-date-input {
+    font-size: 1em;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+#custom-date-input::placeholder {
+    color: #ccc;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="st.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="welcome-text">
+        <h1>Welcome to the Landing Page</h1>
+        <h1 id="welcome-text"></h1>
+    </div>
+
+    <div class="input-container">
+        <label for="number1">Number 1:</label>
+        <input type="text" id="number1">
+    </div>
+    <div class="error-message" id="number1-error"></div>
+
+    <div class="input-container">
+        <label for="number2">Number 2:</label>
+        <input type="text" id="number2">
+    </div>
+    <div class="error-message" id="number2-error"></div>
+
+    <div class="input-container">
+        <button id="addButton">Add</button>
+        <button id="subtractButton">Subtract</button>
+        <button id="multiplyButton">Multiply</button>
+        <button id="divideButton">Divide</button>
+    </div>
+
+    <input type="text" id="result" readonly>
+    
+    <script>
+        // Function to get URL parameters by name
+        function getName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Get the username from the URL query parameter
+        var username = getName("username");
+
+        if (username) {
+            // Display a welcome message with the username
+            document.getElementById("welcome-text").textContent = "Welcome, " + username + "!";
+        }
+
+        const performOperation = (operation) => {
+            const num1 = parseFloat($("#number1").val());
+            const num2 = parseFloat($("#number2").val());
+        
+            $("#number1-error").text(""); // Clear previous error messages
+            $("#number2-error").text("");
+        
+            if (isNaN(num1) || isNaN(num2)) {
+              if (isNaN(num1)) {
+                $("#number1-error").text("Please enter a valid number.");
+              }
+              if (isNaN(num2)) {
+                $("#number2-error").text("Please enter a valid number.");
+              }
+              return;
+            }
+        
+            if (num1 === null || num2 === null) {
+              if (num1 === null) {
+                $("#number1-error").text("Value cannot be null.");
+              }
+              if (num2 === null) {
+                $("#number2-error").text("Value cannot be null.");
+              }
+              return;
+            }
+        
+            if (!isFinite(num1) || !isFinite(num2)) {
+              if (!isFinite(num1)) {
+                $("#number1-error").text("Value is not finite.");
+              }
+              if (!isFinite(num2)) {
+                $("#number2-error").text("Value is not finite.");
+              }
+              return;
+            }
+        
+            let result;
+        
+            switch (operation) {
+              case "add":
+                result = num1 + num2;
+                break;
+              case "subtract":
+                result = num1 - num2;
+                break;
+              case "multiply":
+                result = num1 * num2;
+                break;
+              case "divide":
+                if (num2 === 0) {
+                  $("#number2-error").text("Division by zero is not allowed.");
+                  return;
+                }
+                result = num1 / num2;
+                break;
+              default:
+                $("#result").text("Invalid operation.");
+                return;
+            }
+        
+            $("#result").val(`Result: ${result}`);
+          };
+        
+          // Event handlers for the buttons
+          $("#addButton").click(() => performOperation("add"));
+          $("#subtractButton").click(() => performOperation("subtract"));
+          $("#multiplyButton").click(() => performOperation("multiply"));
+          $("#divideButton").click(() => performOperation("divide"));
+    </script>
+    </body>
+    </html>
