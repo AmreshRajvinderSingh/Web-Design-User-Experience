@@ -1,0 +1,50 @@
+/* Jobs.css */
+
+.jobs {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    color: #7b7777;
+}
+body{
+    color: #636161;
+}
+
+h2 {
+    color: #fff;
+}
+
+p {
+    color: #ddd;
+    line-height: 1.5;
+}
+
+.jobs a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+.jobs a:hover {
+    text-decoration: underline;
+}
+
+/* You may want to customize the Card component styles as well */
+
+/* If your Card component has a class, you can style it like this */
+.card {
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #444;
+}
+
+.card h3 {
+    color: #4f4e4e;
+}
+
+.card p {
+    color: #565555;
+    line-height: 1.5;
+}

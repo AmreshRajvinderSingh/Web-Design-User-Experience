@@ -1,0 +1,11 @@
+# Dependency directories
+node_modules/
+
+# Environment variables
+.env
+
+# MacOS folder attributes
+.DS_Store
+
+# Build output
+build/
