@@ -13,7 +13,7 @@ Assignment9 is a web application developed as part of a course project. It featu
 To set up the project locally:
 
 1. **Clone the Repository**
-git clone https://github.com/AmreshRajvinderSingh/Web-Design-User-Experience/tree/main/Assignment9
+git clone https://github.com/AmreshRajvinderSingh/Web-Design-User-Experience/tree/main/Assignment%209
 
 
 2. **Install Dependencies**
