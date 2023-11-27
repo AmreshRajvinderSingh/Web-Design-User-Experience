@@ -1,0 +1,51 @@
+/* WeatherForecast.css */
+.weather-forecast {
+  padding: 20px;
+  background-color: #282c34; /* Dark background color */
+  color: #fff; /* Light text color */
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  padding-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* Center align the cards */
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Add a subtle box shadow to the cards for depth */
+.card.weather-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom styling for the cards */
+.card.weather-card.dark-theme {
+  background: linear-gradient(to bottom, #575656, #aea9a9);
+  color: #fff;
+  text-align: center;
+}
+
+.card.weather-card.dark-theme .card-body {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+.card.weather-card.dark-theme h2.card-title,
+.card.weather-card.dark-theme .card-text {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+.card.weather-card.dark-theme .btn-primary {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+}
